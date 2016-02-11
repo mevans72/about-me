@@ -58,7 +58,7 @@ if(answer5 === 'n' || answer5 === 'no') {
 console.log('Users response to QUESTION FIVE is: ' + answer5)
 
 
-//My poor and initial attempt at a stretch goal...
+//My poor and initial attempt at a stretch goal....
 var answer6 = parseInt(prompt('How many years has \"Mike\" been in the information security industry?'));
 console.log(answer6);
 
