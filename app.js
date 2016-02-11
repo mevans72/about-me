@@ -3,29 +3,36 @@
 //Introductions
 var userName = prompt('What is your name?');
 console.log('The user said their name is: ' + userName);
+var correctAnswers = 0;
 
 alert('Hi there ' + userName + ', I\'m going to ask you some questions about myself. Please answer Y or N');
 
 //Questions
 var answer1 = prompt('Does \"Mike\" have a background in information security?').toLowerCase();
 if(answer1 === 'y' || answer1 === 'yes') {
-  alert('Nice! I worked in information security for the past thireen years.');
+  alert('Correct! I worked in information security for the past thireen years.');
+  var correctAnswer1 = parseInt(correctAnswers);
+  correctAnswer1++;
 } else if (answer1 === 'n' || answer1 === 'no') {
   alert('Sorry, but you\'re wrong.');
 } else {
   alert('You should have given a Y or N answer, so you lose this round.');
 }
 console.log('Users response to QUESTION ONE is: ' + answer1);
+console.log('User has answered ' + correctAnswer1 + ' question correctly.');
 
 var answer2 = prompt('Does \"Mike\" have a background in software development').toLowerCase();
 if(answer2 === 'n' || answer2 === 'no') {
   alert('Great work! Unfortunately I do not have a dev background, at least not yet...');
+  var correctAnswer2 = parseInt(correctAnswer1);
+  correctAnswer2++;
 } else if (answer2 === 'y' || answer2 === 'yes') {
   alert('Sorry, but you\'re wrong.');
 } else {
   alert('You should have given a Y or N answer, so you lose this round.');
 }
 console.log('Users response to QUESTION TWO is: ' + answer2);
+console.log('User has answered ' + correctAnswer2 + ' questions correctly.');
 
 var answer3 = prompt('Has \"Mike\" ever worked for Cisco systems?').toLowerCase();
 if(answer3 === 'y' || answer3 === 'yes') {
@@ -58,31 +65,42 @@ if(answer5 === 'n' || answer5 === 'no') {
 console.log('Users response to QUESTION FIVE is: ' + answer5)
 
 
-//My poor and initial attempt at a stretch goal....
-var answer6 = parseInt(prompt('How many years has \"Mike\" been in the information security industry?'));
-console.log(answer6);
-
-if(isNaN(answer6)) {
-  prompt('Please make sure you enterd a numerical value.');
-} else if(answer6 === 14) {
-  alert('That is correct! I have been in the InfoSec industry for 14 years.');
-} else {
-  for(count = 0; count < 4; count++) {
-    if(answer6 >= 15 && count < 4) {
-      var answer6 = parseInt(prompt('Unfortunately, I have not even been in the workforce for that long. Try guessing a little lower next time.'));
-      count++;
-      console.log(answer6);
-    } else if (answer6 <= 13 && count < 4) {
-      var answer6 = parseInt(prompt('Unfortunately, I have been in the InfoSec field a litte longer than that. Try guessing a little higher next time.'));
-      count++;
-      console.log(answer6);
-    }
+//Begining of Thursday AM Lab Questions
+for(count = 0; count < 4; count++) {
+  answer6 = parseInt(prompt('How many years has \"Mike\" been in the information security industry?'));
+  console.log('User guessed: ' + answer6);
+  if(answer6 >= 15 && count < 4) {
+    alert('Unfortunately, I have not even been in the workforce for that long. Try guessing a little lower next time.');
+  } else if (answer6 <= 13 && count < 4) {
+    alert('Unfortunately, I have been in the InfoSec field a litte longer than that. Try guessing a little higher next time.');
+  } else if (answer6 === 14) {
+    alert('That is correct! I have been in the InfoSec industry for 14 years.');
+    count = 4;
+    console.log('User answered correctly!');
+  } else if (answer6 === NaN) {
+    alert('Please make sure you enterd a numerical value.');
+    count--;
+    console.log('Did we make it here?');
   }
 }
-console.log('loop done')
 
-if(count = 4 && answer6 !== 14) {
-  alert('Sorry, but you\'re out of guesses.');
+var mikesCity = ['san diego', 'honolulu']
+var correct = false;
+
+console.log(mikesCity);
+
+while(correct === false) {
+  var answer7 = prompt('Which is one of the two cities I would \"Mike\" like to live in?').toLowerCase();
+  console.log('The user guessed: ' + answer7)
+  for(var i = 0; i < mikesCity.length; i++) {
+    if(answer7 === mikesCity[i]) {
+      alert('Thats right! I difinately wouldnt mind living in the beautiful city of Honolulu or San Diego!');
+      correct = true;
+    }
+  }
+  if(correct === false) {
+    alert('Sorry, but I would prefer living in the beautiful city of Honolulu or San Diego!')
+  }
 }
 
 //Thanks and See You Later
