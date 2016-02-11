@@ -57,5 +57,33 @@ if(answer5 === 'n' || answer5 === 'no') {
 }
 console.log('Users response to QUESTION FIVE is: ' + answer5)
 
+
+//My poor and initial attempt at a stretch goal
+var answer6 = parseInt(prompt('How many years has \"Mike\" been in the information security industry?'));
+console.log(answer6);
+
+if(isNaN(answer6)) {
+  prompt('Please make sure you enterd a numerical value.');
+} else if(answer6 === 14) {
+  alert('That is correct! I have been in the InfoSec industry for 14 years.');
+} else {
+  for(count = 0; count < 4; count++) {
+    if(answer6 >= 15 && count < 4) {
+      var answer6 = parseInt(prompt('Unfortunately, I have not even been in the workforce for that long. Try guessing a little lower next time.'));
+      count++;
+      console.log(answer6);
+    } else if (answer6 <= 13 && count < 4) {
+      var answer6 = parseInt(prompt('Unfortunately, I have been in the InfoSec field a litte longer than that. Try guessing a little higher next time.'));
+      count++;
+      console.log(answer6);
+    }
+  }
+}
+console.log('loop done')
+
+if(count = 4 && answer6 !== 14) {
+  alert('Sorry, but you\'re out of guesses.');
+}
+
 //Thanks and See You Later
 alert('That completes our about Mike time! Thanks for getting to know me.')
