@@ -3,6 +3,13 @@
   background-color: grey;
   font-family: Arial;
 }
+
+img {
+  height: 200px;
+  width: 200px;
+  margin: auto;
+}
+
 h1 {
     color: #a6c510;
 }
