@@ -82,7 +82,7 @@ function question4 (){
   console.log('Users response to QUESTION FOUR is: ' + answer4)
   console.log('User has answered ' + correctAnswers+ ' questions correctly.');
 }
-question4
+question4();
 
 
 
