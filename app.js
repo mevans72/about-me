@@ -18,7 +18,7 @@ function question1 (){
     pTagOne.textContent = 'Correct! I worked in information security for the past thireen years.';
   } else if (answer1 === 'n' || answer1 === 'no') {
     //alert('Sorry, but you\'re wrong.');
-    pTagOne.textContent = 'Sorry, but you are wrong';
+    pTagOne.textContent = 'Sorry, but you are wrong.';
   } else {
     alert('You should have given a Y or N answer, so you lose this round.');
   }
@@ -56,7 +56,7 @@ function question3 (){
     pTagThree.textContent = 'Great job! I have indeed spent time working for Cisco and it was fun!';
   } else if (answer3 === 'n' || answer3 === 'no') {
     //alert('Sorry, but you\'re wrong.');
-    pTagThree.textContent = 'Sorry, but you\'re wrong';
+    pTagThree.textContent = 'Sorry, but you\'re wrong.';
   } else {
     alert('You should have given a Y or N answer, so you lose this round.');
   }
@@ -82,9 +82,7 @@ function question4 (){
   console.log('Users response to QUESTION FOUR is: ' + answer4)
   console.log('User has answered ' + correctAnswers+ ' questions correctly.');
 }
-question4
-
-
+question4();
 
 var pTagFive = document.getElementById('ans-five');
 
@@ -93,7 +91,7 @@ function question5 (){
   if(answer5 === 'n' || answer5 === 'no') {
     //alert('Nice job! I am very interested in begining with Python.')
     correctAnswers++;
-    pTagFive.textContent = 'Nice job! I am very interested in begining with Python';
+    pTagFive.textContent = 'Nice job! I am very interested in begining with Python.';
   } else if (answer5 === 'y' || answer5 === 'yes') {
     //alert('Sorry, but you\'re wrong.');
     pTagFive.textContent = 'Sorry, but you\'re wrong.';
@@ -108,28 +106,35 @@ question5();
 //Begining of Thursday AM Lab Questions
 var pTagSix = document.getElementById('ans-six');
 
-function question6 (){
-  for(count = 0; count < 4; count++) {
-    answer6 = parseInt(prompt('How many years has \"Mike\" been in the information security industry?'));
+var answer6 = false;
+correct = false;
+function question6 () {
+  while(correct === false) {
+    answer6 = prompt('How many years has \"Mike\" been in the information security  industry?');
     console.log('User guessed: ' + answer6);
-    if(answer6 >= 15 && count < 4) {
+    if(answer6 >= 15) {
       //alert('Unfortunately, I have not even been in the workforce for that long. Try guessing a little lower next time.');
       pTagSix.textContent = 'Unfortunately, I have not even been in the workforce for that long. Try guessing a little lower next time.';
-    } else if (answer6 <= 13 && count < 4) {
+      correct = false;
+    } else if (answer6 <= 13) {
       //alert('Unfortunately, I have been in the InfoSec field a litte longer than that. Try guessing a little higher next time.');
       pTagSix.textContent = 'Unfortunately, I have been in the InfoSec field a litte longer than that. Try guessing a little higher next time.';
-    } else if (answer6 === 14) {
+      correct = false;
+    } else if (answer6 === 14 || answer6 === '14') {
       //alert('That is correct! I have been in the InfoSec industry for 14 years.');
       pTagSix.textContent = 'That is correct! I have been in the InfoSec industry for 14 years.';
-      count = 4;
       console.log('User answered correctly!');
       correctAnswers++;
-    } else if (answer6 === NaN) {
-      alert('Please make sure you enterd a numerical value.');
-      count--;
+      correct = true;
+    } else if (typeof(answer6) === 'string' && answer6 !== '14') {
+      //alert('Please make sure you enterd a numerical value.');
+      pTagSix.textContent = 'Please make sure you enterd a numerical value.'
       console.log('Did we make it here?');
+      correct = false;
     }
   }
+  console.log('Users response to QUESTION SIX is: ' + answer6)
+  console.log('User has answered ' + correctAnswers + ' questions correctly.');
 }
 question6();
 
@@ -144,15 +149,15 @@ function question7 (){
     console.log('The user guessed: ' + answer7)
     for(var i = 0; i < mikesCity.length; i++) {
       if(answer7 === mikesCity[i]) {
-        //alert('Thats right! I difinately wouldnt mind living in the beautiful city of Honolulu or San Diego!');
+        //alert('Thats right! I definately wouldnt mind living in the beautiful city of Honolulu or San Diego!');
         correct = true;
         correctAnswers++;
-        pTagSix.textContent = 'Thats right! I difinately wouldnt mind living in the beautiful city of Honolulu or San Diego!';
+        pTagSeven.textContent = 'Thats right! I definately wouldnt mind living in the beautiful city of Honolulu or San Diego!';
       }
     }
     if(correct === false) {
-      //alert('Sorry, but I would prefer living in the beautiful city of Honolulu or San Diego!')
-      pTagSix.textContent = 'orry, but I would prefer living in the beautiful city of Honolulu or San Diego!';
+      //alert('Sorry, but I would prefer living in the a different place.')
+      pTagSeven.textContent = 'Sorry, but I would prefer living in the a different place.';
     }
   }
 }

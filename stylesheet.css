@@ -1,27 +1,106 @@
 /*Add your CSS below!*/
 * {
-  background-color: grey;
-  font-family: Arial;
+  font-family: Frutiger, Avenir, Arial;
 }
 
-img {
+body {
+  background-color: grey;
+  margin: 0;
+  padding-top: 0;
+}
+
+.nav {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  height: 4em;
+  background-color: white;
+  border-bottom: .5em solid lightgrey;
+  overflow: auto;
+  background: transparent url(assets/white_transparent_background.jpeg);
+}
+
+.nav a {
+  color: #424e06;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 14px 10px;
+  text-transform: uppercase;
+}
+
+.nav li {
+  display: inline;
+}
+
+.nav .pull-left {
+  margin-left: 2em;
+}
+
+.nav .pull-right {
+  margin-right: 2em;
+}
+
+#profile_pic {
   height: 200px;
   width: 200px;
-  margin: auto;
+  -webkit-transition: all 1s ease;
+     -moz-transition: all 1s ease;
+       -o-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+          transition: all 1s ease;
+  margin: 1em 1em 0 4em;
+  border-style: outset;
+  border-radius: 15px;
+  box-shadow: 15px 30px 40px 15px;
+}
+
+#profile_pic:hover {
+  width: 225px;
+  height: 225px;
+}
+
+h1, h2, h3 {
+    color: #a6c510;
+    font-family: Frutiger, Avenir, Arial;
+    margin: 1em 0 .5em 1em;
+}
+
+h2, h3 {
+    text-transform: uppercase;
 }
 
 h1 {
-    color: #a6c510;
+    margin: 2em .5em .5em 1em;
 }
 
-h3{
-    color: #a6c510;
-}
-
-p {
-  color: #e7e8e7;
+.about {
+  border-top: .5em solid lightgrey;
+  border-bottom: .5em solid lightgrey;
+  background-color: white;
 }
 
 li {
-  color: #e7e8e7;
+  color: #000000;
+}
+
+p, ol, .goals li ,.experience li {
+  color: #000000;
+  margin: 0em 0em 0em 2em;
+}
+
+#moveme_down {
+  margin-top: 20px;
+}
+
+a:link, a:visited, a {
+	text-decoration: none;
+	color: #424e06;
+}
+
+a:hover, a:focus, a:active {
+  font-weight: bold;
+  font-style: none;
+	text-decoration: underline;
+	color: #313b04;
 }
